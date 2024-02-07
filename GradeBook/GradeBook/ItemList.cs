@@ -30,12 +30,31 @@ namespace GradeBook
                         break;
                     case "1":
                         {
+                            
                             Console.WriteLine("Podaj ocenę z Matematyki");
                             var inputmenu3 = Console.ReadLine();
                             double.TryParse(inputmenu3, out double score);
-                            itiem = 'M';
-                            logic.ItemScoreAdd(score);
-                            employee.AddGrade(itiem, score);
+                            if (logic.veryficationvalue(score))
+
+                                //try
+
+                                {
+
+                                    itiem = 'M';
+                                    logic.ItemScoreAdd(score);
+                                    var grade = inputmenu3;
+                                    employee.AddGrade(itiem, grade);
+                                }
+                                //catch (Exception ex)
+                                //{
+                                //    throw;
+                                    
+                                //}
+                                else
+                            {
+                                Console.WriteLine("Zakres spoza 1-6");
+                            }
+
                         }
                         break;
                     case "2":

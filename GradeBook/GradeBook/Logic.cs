@@ -83,5 +83,27 @@ namespace GradeBook
             double s = logic.RatingWeightScore(score, libra1);
             Console.WriteLine(s);
         }
+
+        public override void AddGrade(char itiem, string grade)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool veryficationvalue(double score)
+        {
+            bool veryfication;
+            if (score >= 1 && score <= 6)
+            {
+                veryfication = true;
+                return veryfication;
+            }
+            else
+            {
+                veryfication = false;
+                return veryfication;
+                
+               
+            }
+        }
     }
 }

@@ -24,7 +24,7 @@
         }
         public static void Menu3()
         {
-            Console.Clear();
+           // Console.Clear();
 
             Console.WriteLine("                        Lista przedmiotów");
             Console.WriteLine("=================================================================");

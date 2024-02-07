@@ -22,6 +22,9 @@ namespace GradeBook
 
         public abstract void AddGrade(char itiem, double grade);
 
+
+        public abstract void AddGrade(char itiem, string grade);
+
         public abstract void AddGrade(float grade);
 
         public abstract void AddGrade(int grade);

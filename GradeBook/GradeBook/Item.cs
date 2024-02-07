@@ -4,49 +4,58 @@ namespace GradeBook
 {
     public class Item
     {
-        public static void Mathematics() 
+        public static double  Mathematics() 
         {
-            var libra = 1;
+            var libra = 0.15;
+            return libra;
         }
 
-        public static void Polishlanguage()
+        public static double Polishlanguage()
         {
             var libra = 1;
+            return libra;
         }
 
-        public static void Englishlanguages()
+        public static double Englishlanguages()
         {
             var libra = 1;
+            return libra;
         }
 
-        public static void History()
+        public static double History()
         {
             var libra = 0.8;
+            return libra;
         }
 
-        public static void Biology()
+        public static double Biology()
         {
             var libra = 0.9;
+            return libra;
         }
 
-        public static void Physicaleducation()
+        public static double Physicaleducation()
         {
             var libra = 0.4;
+            return libra;
         }
 
-        public static void Music()
+        public static double Music()
         {
             var libra = 0.8;
+            return libra;
         }
 
-        public static void Plasticity()
+        public static double Plasticity()
         {
             var libra = 0.6;
+            return libra;
         }
 
-        public static void Technique()
+        public static double Technique()
         {
             var libra = 0.7;
+            return libra;
         }
     }
 }

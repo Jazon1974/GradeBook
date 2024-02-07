@@ -15,17 +15,17 @@
 
 using GradeBook;
 using System;
+using System.Runtime.CompilerServices;
 
-///
-//var employee1 = new Menu();
+
 Menu.Menu2();
 
 while(true)
 {
-    Console.WriteLine("Podaj wybór");
-    var inputmenu1 = Console.ReadLine();
-
-	var employee = new ItemList();
+    Console.WriteLine("Podaj wybór");;
+	var inputmenu1 = Console.ReadLine();
+	
+	
 	
 	if (inputmenu1 == "q")
 	{ 
@@ -44,11 +44,7 @@ while(true)
 				case "3":
 				{ ItemList.ItemList2() ; } 
 				break;
-
-
 		}
-		
-
 	}
 	catch (Exception)
 	{

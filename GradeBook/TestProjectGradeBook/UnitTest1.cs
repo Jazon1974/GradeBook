@@ -9,21 +9,31 @@ namespace TestProjectGradeBook
 
 
         [Test]
-        public void Test1()
+        public void RatingWeightScoreCoinTest()
         {
             //arrange
-            var rat = new Logic();
+            var rat = new Logic("Jacek","Jaxiewicz");
             float score = 5;
             double libra = 1.8;
             float coinmax = 30;
             //act
 
             //assert
+            double result = rat.RatingWeightScoreCoin(score, libra, coinmax);
+            Assert.AreEqual(270, result);
+        }
+        [Test]
+        public void RatingWeightScoreTest()
+        {
+            //arrange
+            var rat = new Logic("Jacek","Jaxiewicz");
+            float score = 5;
+            double libra = 1.8;
+            //act
 
-            double result = rat.RatingWeightScore(score, libra, coinmax);
-
-
-            Assert.AreEqual(120, result);
+            //assert
+            double result = rat.RatingWeightScore(score, libra);
+            Assert.AreEqual(9, result);
         }
     }
 }

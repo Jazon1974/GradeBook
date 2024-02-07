@@ -1,4 +1,9 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace GradeBook
 {
@@ -6,82 +11,122 @@ namespace GradeBook
     {
         public static void ItemList2()
         {
-            Console.Clear();
-
-            Console.WriteLine("                        Lista przedmiotów");
-            Console.WriteLine("=================================================================");
-            Console.WriteLine();
-            Console.WriteLine("Wybierz przeddmiot do którego chcesz dodać ocenę");
-            Console.WriteLine();
-            Console.WriteLine("1 - matematyka");
-            Console.WriteLine("2 - j.polski");
-            Console.WriteLine("3 - j.angielski");
-            Console.WriteLine("4 - historia");
-            Console.WriteLine("5 - biologia");
-            Console.WriteLine("6 - w-f");
-            Console.WriteLine("7 - muzyka");
-            Console.WriteLine("8 - plastyka");
-            Console.WriteLine("9 - technika");
-            Console.WriteLine("0 - powrót do poprzedniego menu");
-
-            Console.WriteLine("Podaj wybór");
-
-            var inputmenu2 = Console.ReadLine();
+            var employee = new EmployeeInFile("Jacek", "Jaxiewicz");
+            var inputmenu2 = "1";
             char itiem;
 
-            switch (inputmenu2)
+            while (inputmenu2 != "0")
             {
-                case "0":
-                    { Menu.Menu2();
-                        
-                    }
-                    break;
-                case "1":
-                    { Menu.Menu2();
-                        itiem = 'M';
-                    }
-                    break;
-                case "2":
-                    { Menu.Menu2();
-                        itiem = 'L';
-                    }
-                    break;
-                case "3":
-                    { Menu.Menu2();
-                        itiem = 'A';
-                    }
-                    break;
-                case "4":
-                    { Menu.Menu2();
-                        itiem = 'H';
-                    }
-                    break;
-                case "5":
-                    { Menu.Menu2();
-                        itiem = 'B';
-                    }
-                    break;
-                case "6":
-                    { Menu.Menu2();
-                        itiem = 'W';
-                    }
-                    break;
-                case "7":
-                    { Menu.Menu2();
-                        itiem = 'M';
-                    }
-                    break;
-                case "8":
-                    { Menu.Menu2();
-                        itiem = 'P';
-                    }
-                    break;
-                case "9":
-                    { Menu.Menu2();
-                        itiem = 'T';
-                    }
-                    break;
+                Menu.Menu3();
+                Console.WriteLine("Podaj wybór przedmiotu");
+                inputmenu2 = Console.ReadLine();
+                var logic = new Logic("Jacek", "Jaxiewicz");
+                switch (inputmenu2)
+                {
+                    case "0":
+                        {
+                            Menu.Menu2();
+                        }
+                        break;
+                    case "1":
+                        {
+                            Console.WriteLine("Podaj ocenę z Matematyki");
+                            var inputmenu3 = Console.ReadLine();
+                            double.TryParse(inputmenu3, out double score);
+                            itiem = 'M';
+                            logic.ItemScoreAdd(score);
+                            employee.AddGrade(itiem, score);
+                        }
+                        break;
+                    case "2":
+                        {
+                            Console.WriteLine("Podaj ocenę z j.polskiego");
+                            var inputmenu3 = Console.ReadLine();
+                            double.TryParse(inputmenu3, out double score);
+                            itiem = 'L';
+                            logic.ItemScoreAdd(score);
+                            employee.AddGrade(itiem, score);
+                        }
+                        break;
+                    case "3":
+                        {
+                            Console.WriteLine("Podaj ocenę z j.angielskiego");
+                            var inputmenu3 = Console.ReadLine();
+                            double.TryParse(inputmenu3, out double score);
+                            itiem = 'A';
+                            logic.ItemScoreAdd(score);
+                            employee.AddGrade(itiem, score);
+                        }
+                        break;
+                    case "4":
+                        {
+                            Console.WriteLine("Podaj ocenę z historii");
+                            var inputmenu3 = Console.ReadLine();
+                            double.TryParse(inputmenu3, out double score);
+                            itiem = 'H';
+                            logic.ItemScoreAdd(score);
+                            employee.AddGrade(itiem, score);
+                        }
+                        break;
+                    case "5":
+                        {
+                            Console.WriteLine("Podaj ocenę z biologii");
+                            var inputmenu3 = Console.ReadLine();
+                            double.TryParse(inputmenu3, out double score);
+                            itiem = 'B';
+                            logic.ItemScoreAdd(score);
+                            employee.AddGrade(itiem, score);
+                        }
+                        break;
+                    case "6":
+                        {
+                            Console.WriteLine("Podaj ocenę z w-f");
+                            var inputmenu3 = Console.ReadLine();
+                            double.TryParse(inputmenu3, out double score);
+                            itiem = 'W';
+                            logic.ItemScoreAdd(score);
+                            employee.AddGrade(itiem, score);
+                        }
+                        break;
+                    case "7":
+                        {
+                            Console.WriteLine("Podaj ocenę z muzyki");
+                            var inputmenu3 = Console.ReadLine();
+                            double.TryParse(inputmenu3, out double score);
+                            itiem = 'U';
+                            logic.ItemScoreAdd(score);
+                            employee.AddGrade(itiem, score);
+                        }
+                        break;
+                    case "8":
+                        {
+                            Console.WriteLine("Podaj ocenę z plastyki");
+                            var inputmenu3 = Console.ReadLine();
+                            double.TryParse(inputmenu3, out double score);
+                            itiem = 'P';
+                            logic.ItemScoreAdd(score);
+                            employee.AddGrade(itiem, score);
+                        }
+                        break;
+                    case "9":
+                        {
+                            Console.WriteLine("Podaj ocenę z techniki");
+                            var inputmenu3 = Console.ReadLine();
+                            double.TryParse(inputmenu3, out double score);
+                            itiem = 'T';
+                            logic.ItemScoreAdd(score);
+                            employee.AddGrade(itiem, score);
+                        }
+                        break;
+                }
 
+                try
+                {
+                }
+                catch (Exception a)
+                {
+                    System.Console.WriteLine($"Exception: {a.Message}");
+                }
             }
         }
 
